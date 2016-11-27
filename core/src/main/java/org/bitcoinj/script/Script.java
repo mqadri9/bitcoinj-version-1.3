@@ -536,8 +536,8 @@ public class Script {
         } else if (isSentToAddress()) {
             sigsSuffixCount = 1; // <sig> <pubkey>
         } else if (isSentToChecksumContract()) {
-        	sigsPrefixCount = 0; //<checksum> <sig>* <pubkey>
-        	sigsSuffixCount = 2;
+        	sigsPrefixCount = 1; //<checksum> <sig>* <pubkey>
+        	sigsSuffixCount = 1;
         }
         return ScriptBuilder.updateScriptWithSignature(scriptSig, sigBytes, index, sigsPrefixCount, sigsSuffixCount);
     }

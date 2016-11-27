@@ -351,7 +351,7 @@ public class ScriptBuilder {
     public static Script createChecksumContractInputScript(@Nullable TransactionSignature signature, ECKey pubKey) {
         byte[] pubkeyBytes = pubKey.getPubKey();
         byte[] sigBytes = signature != null ? signature.encodeToBitcoin() : new byte[]{};
-        return new ScriptBuilder().data(sigBytes).data(pubkeyBytes).data(hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d")).build();
+        return new ScriptBuilder().data(hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d")).data(sigBytes).data(pubkeyBytes).build();
     }
     /**
      * Returns a copy of the given scriptSig with the signature inserted in the given position.
